@@ -1,0 +1,9 @@
+# Hopefully ignore all extensionless files -- needs to be at top
+*
+!/**/
+!*.*
+
+!Makefile
+
+*.out
+*.o
