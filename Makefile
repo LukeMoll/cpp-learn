@@ -1,5 +1,14 @@
 CC=g++
-CFLAGS=-Wall -Wextra -Wpedantic
+CFLAGS=-Wall -Wextra -Wpedantic -std=c++11
 
-hello: hello.cpp
-	$(CC) -o hello hello.cpp $(CFLAGS)
+DEPS = 
+
+# using .o as dependencies 
+hello: hello.o
+	$(CC) $(CFLAGS) -o hello hello.o
+
+aoc_2015_2: aoc_2015_2.o
+	$(CC) $(CFLAGS) -o aoc_2015_2 aoc_2015_2.o
+
+%.o: %.cpp $(DEPS)
+	$(CC) -c $(CFLAGS) -o $@ $<
